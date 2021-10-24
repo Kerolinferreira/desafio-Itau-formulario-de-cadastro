@@ -10,58 +10,69 @@
 </head>
 <body>
  <div> 
+
   <header>  
-  <h1>bem vindo ao nosso site.
-    <br>
-    Por favor, preencha o formulário de cadastro abaixo para continuar.</h1>
+    <div>
+      <h1>
+        Seja bem-vindo ao nosso site.
+        <br>
+        Por favor, preencha o formulário de cadastro abaixo para continuar.
+       </h1>
+     </div>
   </header>
   
-  <form metod="post">
-<h3>Dados Pessoais</h3>
-<div>
-  <label for="id_nome">Nome:</label>
-    <input type="text"name="nome" id="id_nome" placeholder="Escreva seu primeiro nome aqui" Vale" required=" required"/>
-  </div>
-  <div>
-  <label for="id_sobrenome">Sobrenome:</label>
-    <input type="text" name="sobrenome" id="id_sobrenome" placeholder="Escreva seu sobrenome aqui" "vale" required=" required"/>
-  </div>
-  <div>
-    <label for="id_RG">RG: </label>
-    <input type="text" name="RG" id="id_RG" />
-    </div>
+  <form class="container" method="GET" onsubmit="envioCPF();" >
+    <h3>Dados Pessoais</h3>
+       
     <div>
-    <label for="id_CPF">CPF:</label>      
-          <input type="text" name="cpf" id="id_CPF" "vale" required=" required"/>
-        </div>
-                <div>
-    <label>Sexo:</label>
- <br>
-    <input type="radio" name="sexo" value="Feminino"/> feminino
- <br>
- <input type="radio" name="sexo" value="Masculino"/> Masculino
+      <label for="id_nome">Nome: </label>
+      <input type="text"name="nome" id="id_nome" placeholder="Escreva seu nome completo aqui" Vale" required=" required"/>
     </div>
+   
+    
+    <div>
+      <label for="id_RG">RG: </label>
+      <input type="text" name="RG" id="id_RG" placeholder="xxxxxxxx-x" maxlength="110" />
+    </div>
+
+     
+    <div>
+      <label for="id_CPF" >CPF:</label>     
+      <input type="text" name="cpf" id="ID_CPF" placeholder="XXX.XXX.XXX-XX" autocomplete="off" maxlength="14" onblur="return verificarCPF(this.value);" required>
+    </div>
+<br>
+    <div >
+      <label for="sexo">Sexo</label>
+       <select name="sexo" id="sexo">
+           <option selected disabled value="" >Selecione</option>
+           <option value="">Masculino</option>
+           <option value="">Feminino</option>
+           </option>
+       </select>
+   </div>
+
     <h3>Informações de Contato:</h3>
     <div>
-    <label for="id_E-mail:">E-mail</label>
-    <input type="text" name="E-mail" id="id_E-mail:" placeholder="seuemail@exemplo.com"/>
+      <label for="id_E-mail">E-mail: </label>
+      <input type="text" name="E-mail" id="id_E-mail" placeholder="seuemail@exemplo.com" />
     </div>
-                <div>
+
     <label for="id_celular">Celular: </label>
-               <input type="tel" name="número de celular" id="id_celular" placeholder="(xx)xxxxx-xxxx""vale" required=" required"/>
-                </div>
-               <div>
-                 <label for="id_telefone">Telefone fixo:</label>
-                 <input type="tel"name="número de celular" id="id_telefone" placeholder="(xx)xxxxx-xxxx""vale" required=" required"/>
-               </div>
-    <h3>Dados Residenciais</h3>
+    <input type="tel" name="número de celular" id="id_celular" placeholder="(xx)xxxxx-xxxx""vale" required=" required"/>
+              </div>
+
   <div>
-    <label for="id_CEP">CEP:</label>                 
-          <input type="text" name="CEP" id="id_CEP" "vale" required=" required" size="10" maxlength="10"/>
-        </div>
-        <div>
-          <label>Estado:</label>
-          <select name "estados">
+    <label for="id_telefone">Telefone fixo:</label>
+    <input type="tel" name="Telefone fixo" id="id_telefone" placeholder="(xx)xxxx-xxxx" "vale" required=" required"/>
+                 </div>
+    
+                 <h3>Dados Residenciais</h3>
+<div>
+  <label for="id_CEP">CEP:</label>                 
+  <input type="text" name="CEP" id="id_CEP" "vale" required=" required" size="9" maxlength="9"/>
+</div>
+<label for="Estado">Estado:</label>
+<select name="estados">
   <option value="Select">Selecione</option>
   <option value="AC">Acre</option>
   <option value="AL">Alagoas</option>
@@ -92,25 +103,33 @@
 	<option value="TO">Tocantins</option>
 </select>
 </div>
+ 
 <div>
   <label for="id_Cidade">Cidade:</label>:
-  <input type="text" name="Cidade" id="id_Cidade" "vale" required=" required">>
+  <input type="text" name="Cidade" id="id_Cidade" />
 </div>
+
 <div>
   <label for="id_Bairro">Bairro:</label>:
-  <input type="text" name="Bairro" id="id_Bairro" "vale" required=" required">
-</div>
+  <input type="text" name="Bairro" id="id_Bairro" />
+  </div>
+
+
 <div>
   <label for="id_Rua">Rua:</label>:
-  <input type="text" name="Ba"Rua" id="id_Rua" "vale" required=" required">
+  <input type="text" name="Rua" id="id_Rua" "vale" required=" required" />
 </div>
+
 <div>
+  <label for="id_Número">Número:</label>:
+  <input type="text" name="Número" id="id_Número" "vale" required=" required"/>
 </div>
-<label for="id_Número">Número:</label>:
-  <input type="text" name="Ba"Número" id="id_Número" "vale" required=" required">
-  <div
-hr
-<input type="button" name="enviar"
+
+<hr>
+
+<div>
+    <button class="botao" type="botao" name="botao" id="botao"> ENVIAR</button>
+</div>
 </form>
 </body>
 </html>
