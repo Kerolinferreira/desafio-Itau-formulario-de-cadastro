@@ -1,65 +1,101 @@
 <DOCTYPE html>
-</head>
+  <html>
+    <lang="pt-br"/>
+ 
+<head>
+   <title> FORMULÁRIO DE CADASTRO</title>
+   <meta charset="utf-8"/>
+   <link href="stile.css" rel="stylesheet">
 
-<html lang="pt-br"></html>
-   <meta charset="utf-8">
-   <title>  formulário de cadastro </title>
-   
- <meta name="description" content="Bem-vindo ao nosso site."">
-</body>
+   <script type="text/javascript" src="enviar.js"></script>
+   <meta name="description" content="Bem-vindo ao nosso site.">
+</head>
+<body>
  <div> 
   <header>  
   <h1>bem vindo ao nosso site.
     <br>
     Por favor, preencha o formulário de cadastro abaixo para continuar.</h1>
   </header>
-  <header>
-  <h2> Todos os campos são obrigatórios.</h2>>
-  </header>
-
-<fieldset>
-<h3><legend>dados pessoais:</legend></h3>
-  <label for="nome">nome: </label>
-    <div><input type="text" name="nome"/></div>
-    sobrenome:
-       <div><input type="text" name="sobrenome"/></div>
-          RG
-          <div><input type="text" name="RG"/></div>
-          CPF
-          <div><input type="text" name="cpf"/></div>
-</fieldset>
-  <fieldset>
-    <h3><legend> informações de contato:</legend></h3>
-  <label for="email">E-mail: </label>
-  <div><input type="email" name="email"/></div>
-                    Celular
-                <div><input type="tel" name="DDI" size="3" maxlength="3" value="+55"/></div>
-                <div><input type="tel" name="DDD" size="2" maxlength="2"/></div>
- <div><input type="tel" name="número" size="9" maxlength="9"/></div>
- telefone fixo:
- <div><input type="tel" name="DDI" size="3" maxlength="3" value="+55"/></div>
-                <div><input type="tel" name="DDD" size="2" maxlength="2"/></div>
- <div><input type="tel" name="número" size="9" maxlength="9"/></div>
-  </fieldset>
- sexo
+  
+  <form metod="post">
+<h3>Dados Pessoais</h3>
+<label for="id_nome">Nome </label>
+    <div><input type="text" name="nome" id="id_nome" Vale" required=" required"/></div>
+    <label for="id_sobrenome">Sobrenome:</label>
+    <div><input type="text" name="sobrenome" id="id_sobrenome""vale" required=" required"/></div>
+    <label for="id_RG">RG: </label>
+    <div><input type="text" name="RG" id="id_RG" /></div>
+    <label for="id_CPF">CPF:</label>      
+          <div><input type="text" name="cpf" id="id_CPF" "vale" required=" required"/></div>
+          <label>Sexo:</label>
  <div><input type="radio" name="sexo" value="Feminino"/> feminino</div>
   <div><input type="radio" name="sexo" value="Masculino"/> Masculino </div>
-  <label>
-    <legend>Endereço</legend>
-  CEP   
-          <div><input type="text" name="cep" size="10" maxlength="10"/></div>
-          Estado
- <div><input type="text" name="estado"/></div>
- cidade
- <div><input type="text" name="cidade"/></div>
- bairro:
- <div><input type="text" name="bairro"/></div>
-rua
-<div><input type="text" name="rua"/></div>
-número
-<div>
-  <input type="number" name="número"/>
-</div>
-</label> 
-<input type="submit" name="enviar"
-<a href="formulário preenchido com sucesso.html#5">Obrigada!</a
+    <h3>Informações de Contato:</h3>
+    <label for="id_E-mail">E-mail: </label>
+    <div><input type="email" name="email" id="id_E-mail" /></div>
+    <label for="id_celular">Celular: </label>
+    <label for="id_DDI">DDI: </label>
+               <input type="tel" name="DDI" id="id_DDI" size="3" maxlength="3" value="+55"/>
+               <label for="id_DDD"></label>
+               <input type="tel" name="DDD" id="id_DDD" "vale" required=" required" size="2" maxlength="2"/>
+               <label for="id_número">Número: </label>
+               <input type="tel" name="número" id="id_número" "vale" required=" required" size="9" maxlength="9"/>
+  <div><label for="id_telefone">Telefone fixo:</label></div>
+    <label for="id_DDI">DDI: </label>
+               <input type="tel" name="DDI" id="id_DDI" size="3" maxlength="3" value="+55"/>
+               <label for="id_DDD">DDD</label>
+               <input type="tel" name="DDD" id="id_DDD"  size="2" maxlength="2"/>
+               <label for="id_número">Número: </label>
+               <input type="tel" name="número" id="id_número" size="9" maxlength="9"/>
+
+
+    <h3>Dados Residenciais</h3>
+  <label>CEP:</label>
+          <div><input type="text" name="CEP" id="id_CEP" "vale" required=" required" size="10" maxlength="10"/></div>
+          <label>Estado:</label>
+ <div><select name "estados">
+  <option value="Select">Selecione</option>
+  <option value="AC">Acre</option>
+  <option value="AL">Alagoas</option>
+	<option value="AP">Amapá</option>
+	<option value="AM">Amazonas</option>
+	<option value="BA">Bahia</option>
+	<option value="CE">Ceará</option>
+	<option value="DF">Distrito Federal</option>
+	<option value="ES">Espírito Santo</option>
+	<option value="GO">Goiás</option>
+	<option value="MA">Maranhão</option>
+	<option value="MT">Mato Grosso</option>
+	<option value="MS">Mato Grosso do Sul</option>
+	<option value="MG">Minas Gerais</option>
+	<option value="PA">Pará</option>
+	<option value="PB">Paraíba</option>
+	<option value="PR">Paraná</option>
+	<option value="PE">Pernambuco</option>
+	<option value="PI">Piauí</option>
+	<option value="RJ">Rio de Janeiro</option>
+	<option value="RN">Rio Grande do Norte</option>
+	<option value="RS">Rio Grande do Sul</option>
+	<option value="RO">Rondônia</option>
+	<option value="RR">Roraima</option>
+	<option value="SC">Santa Catarina</option>
+	<option value="SP">São Paulo</option>
+	<option value="SE">Sergipe</option>
+	<option value="TO">Tocantins</option>
+</select></div>
+ <label>Cidade:</label>
+ <div><input type="text" name="cidade" id="id_cidade" /></div>
+<label>Bairro:</label>
+ <div><input type="text" name="bairro" id="id_bairro" /></div>
+<label>
+  Rua:
+  >label>
+<div><input type="text" name="rua" id="id_rua" "vale" required=" required"/></div>
+<label>Número:</label
+<div><input type="text" name="número" id="id_número" "vale" required=" required"/></div>
+hr
+<input type="button" name="enviar"
+</form>
+</body>
+</html>
