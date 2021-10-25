@@ -1,77 +1,96 @@
-<DOCTYPE html>
+<!DOCTYPE html>
   <html lang="pt-br">
 <head>
-   <title> FORMULÁRIO DE CADASTRO</title>
-   <meta charset="utf-8"/>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="stile.css" rel="stylesheet">
-
    <script type="text/javascript" src="enviar.js"></script>
    <meta name="description" content="Bem-vindo ao nosso site.">
+   <title> Formulário de Cadastro</title>
 </head>
 <body>
- <div> 
 
   <header>  
     <div>
       <h1>
-        Seja bem-vindo ao nosso site.
+        Seja bem vindo ao nosso site.
         <br>
         Por favor, preencha o formulário de cadastro abaixo para continuar.
        </h1>
      </div>
   </header>
   
-  <form class="container" method="GET" onsubmit="envioCPF();" >
+  <form class="container" action="" method="GET" onsubmit="envioCPF();" >
+    <br>
     <h3>Dados Pessoais</h3>
-       
-    <div>
-      <label for="id_nome">Nome: </label>
-      <input type="text"name="nome" id="id_nome" placeholder="Escreva seu nome completo aqui" Vale" required=" required"/>
+    <br>
+    <div class="campo">
+      <label for="nome"> Nome Completo: </label>
+      <input class="nome" type="text" name="nome" id="nome" placeholder="Coloque seu nome" required >
+      
     </div>
+    <br>
+    <hr>
+
+    <fieldset class="grupoId">
+      <div class="campo">
+          <div id="aliEmojiCPF"> <label for="cpf"> CPF: </label><p id="respCPF"></p>
+          </div>
+          <div id="aliRespCPF">
+              <input type="text" name="cpf" id="cpf_digitado" placeholder="XXX.XXX.XXX-XX" onkeyup="mascara_cpf()" autocomplete="off" maxlength="14" onblur="return verificarCPF(this.value);" required>
+          </div>
+      </div>
+
+      <div class="campo">
+          <label for="rg" >RG: </label>
+          <input type="text" name="rg" id="rg"  placeholder="XX.XXX.XXX-X" maxlength="12" placeholder="Coloque seu RG">
+      </div>
+
+      <div class="campo">
+          <label for="sexo">Sexo:</label>
+          <select name="sexo" id="sexo">
+              <option selected disabled value="" >Selecione</option>
+              <option value="">Masculino</option>
+              <option value="">Feminino</option>
+              </option>
+          </select>
+      </div>
+    </fieldset>
+  <hr>
+
+   <fieldset class="grupoEnd">
+   <div class="campo">
+    <label for="rua">Rua:</label>
+    <input type="text" name="rua" id="id_rua" required=" required" placeholder="Coloque sua Rua">
+  </div>
+  
+  <div class="campo">
+      <label for="numero">Número:</label>
+      <input type="text" name="numero" id="id_número"  required=" required" placeholder="Coloque seu Numero">
+  </div>
+  </fieldset>
+
+  <hr>
    
-    
-    <div>
-      <label for="id_RG">RG: </label>
-      <input type="text" name="RG" id="id_RG" placeholder="xxxxxxxx-x" maxlength="110" />
-    </div>
-
-     
-    <div>
-      <label for="id_CPF" >CPF:</label>     
-      <input type="text" name="cpf" id="ID_CPF" placeholder="XXX.XXX.XXX-XX" autocomplete="off" maxlength="14" onblur="return verificarCPF(this.value);" required>
-    </div>
-<br>
-    <div >
-      <label for="sexo">Sexo</label>
-       <select name="sexo" id="sexo">
-           <option selected disabled value="" >Selecione</option>
-           <option value="">Masculino</option>
-           <option value="">Feminino</option>
-           </option>
-       </select>
+  <fieldset class="grupoEnd1">
+  <div class="campo">
+    <label for="bairro">Bairro:</label>
+    <input type="text" name="bairro" id="id_bairro" placeholder="Coloque seu Bairro">
    </div>
+  </fieldset>
 
-    <h3>Informações de Contato:</h3>
-    <div>
-      <label for="id_E-mail">E-mail: </label>
-      <input type="text" name="E-mail" id="id_E-mail" placeholder="seuemail@exemplo.com" />
-    </div>
+  <hr>
 
-    <label for="id_celular">Celular: </label>
-    <input type="tel" name="número de celular" id="id_celular" placeholder="(xx)xxxxx-xxxx""vale" required=" required"/>
-              </div>
-
-  <div>
-    <label for="id_telefone">Telefone fixo:</label>
-    <input type="tel" name="Telefone fixo" id="id_telefone" placeholder="(xx)xxxx-xxxx" "vale" required=" required"/>
-                 </div>
-    
-                 <h3>Dados Residenciais</h3>
-<div>
-  <label for="id_CEP">CEP:</label>                 
-  <input type="text" name="CEP" id="id_CEP" "vale" required=" required" size="9" maxlength="9"/>
+  <h3>Dados Residenciais</h3>
+  <fieldset class="grupoLocalidade">
+<div class="campo">
+    <label for="cep">CEP:</label>
+    <input type="text" name="cep" id="id_CEP" required=" required" size="10" maxlength="10" placeholder="Coloque seu CEP">
 </div>
-<label for="Estado">Estado:</label>
+          
+<div class="campo">
+  <label for="estados">Estado:</label>
 <select name="estados">
   <option value="Select">Selecione</option>
   <option value="AC">Acre</option>
@@ -104,32 +123,35 @@
 </select>
 </div>
  
-<div>
-  <label for="id_Cidade">Cidade:</label>:
-  <input type="text" name="Cidade" id="id_Cidade" />
+<div class="campo">
+   <label for="cidade">Cidade:</label>
+   <input type="text" name="cidade" id="id_cidade" placeholder="Coloque sua Cidade">
 </div>
+</fieldset>
 
-<div>
-  <label for="id_Bairro">Bairro:</label>:
-  <input type="text" name="Bairro" id="id_Bairro" />
-  </div>
+  <hr>
 
+    <h3>Informações de Contato:</h3>
+    <fieldset class="grupoContato">
+    <div class="campo">
+        <label for="cel">Celular: </label>
+        <input type="tel" name="cel" id="cwl" size="3" placeholder="Coloque seu Nº celular">
+    </div>   
 
-<div>
-  <label for="id_Rua">Rua:</label>:
-  <input type="text" name="Rua" id="id_Rua" "vale" required=" required" />
-</div>
-
-<div>
-  <label for="id_Número">Número:</label>:
-  <input type="text" name="Número" id="id_Número" "vale" required=" required"/>
-</div>
+    <div class="campo">
+        <label for="fixo">Número Fixo:</label>
+        <input type="tel" name="fixo" id="fixo" placeholder="Coloque seu Nº fixo" required >
+    </div>
+  </fieldset>
 
 <hr>
 
+<br>
 <div>
     <button class="botao" type="botao" name="botao" id="botao"> ENVIAR</button>
 </div>
+<br>
 </form>
+
 </body>
 </html>
