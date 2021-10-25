@@ -97,3 +97,12 @@ function mascara_cpf(){
        cpf.value += '-';
     }
 }
+
+function enviar() {
+    var nome = document.getElementById("id_nome");
+    var cpf = document.getElementById("id_cpf");
+    var rua = document.getElementById("id_rua");
+    if (nome.value != "" || cpf.value != "" || rua.value != "") {
+        alert("Obrigado sr(a) " + nome.value + " os seus dados foram encaminhados com sucesso");
+    }
+}
